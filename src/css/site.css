@@ -3,8 +3,406 @@ html {
   height: 100%;
 }
 
-h1.opening-soon {
-  font-family: Roboto, Arial;
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font: 400 16px 'Roboto';
+  background: #567D46;
+}
+
+div.sky {
+  background: #95c8e8;
+}
+
+div.bar {
+  position: relative;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 24px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+}
+
+div.bar div.bar-bartender {
+  margin-top: 12px;
   text-align: center;
+}
+
+div.bar div.bar-bartender.default-message {
+  text-align: right;
+}
+
+div.bar div.bar-bartender img {
+  width: 200px;
+}
+
+div.bar div.messages {
+  margin-top: 10px;
+  font-size: 0.95em;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  color: black;
+  background-color: rgba(174, 223, 228, 0.85);
+  border-radius: 15px;
+  border: solid 2px #00B0D7;
+  font-family: "Courier", monospace;
+  padding-top: 0;
+}
+
+div.bar div.messages a {
+  color: black;
+  text-decoration: none;
+}
+
+div.bar div.messages a.hover {
+  text-decoration: underline;
+}
+
+div.bar div.messages.custom-message {
+  background-color: rgba(252, 186, 99, 0.85);
+  border-color: #ef4236;
+}
+
+div.bar div.messages ul {
+  margin-top: 0;
+  list-style: none;
+  padding: 0 1em;
+}
+
+div.bar div.messages li {
+  position: relative;
+  padding-right: 5px;
+  padding-top: 10px;
+}
+
+div.bar div.speech-bubble {
+  position: relative;
+  border-radius: .4em;
+}
+
+div.bar div.speech-bubble.default-message:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 27px solid transparent;
+  border-right-color: #00B0D7;
+  border-left: 0;
+  margin-top: -27px;
+  margin-left: -27px;
+}
+
+div.bar div.speech-bubble.custom-message:before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 27px solid transparent;
+  border-left-color: #ef4236;
+  border-right: 0;
+  margin-top: -27px;
+  margin-right: -27px;
+}
+
+div.menu {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 12px 12px 0 12px;
+  color: #F4EFE6;
+  background: #111;
+  border-top: #855e42 12px solid;
+  border-left: #855e42 12px solid;
+  border-right: #855e42 12px solid;
+}
+
+div.menu a {
+  color: #F4EFE6;
+  text-decoration: none;
+}
+
+div.menu a:hover {
+  text-decoration: underline;
+}
+
+div.menu table {
+  width: 100%;
+}
+
+div.menu table td {
+  width: 20%;
+  text-align: center;
+}
+
+div.menu table td.logo {
+  margin-top: 24px;
+}
+
+div.menu table td.logo img {
+  width: 110px;
+  height: 110px;
+}
+
+div.menu table td.gutter {
+  border-left: 1px solid #777777;
+}
+
+div.menu table ul {
+  margin: 0;
+  padding: 0;
+}
+
+div.menu table li {
+  list-style-type: none;
+  padding: 3px 0;
+}
+
+div.menu table li span {
+  font-size: 0.75em;
+  padding: 0 10px;
+}
+
+div.menu-bottom {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 18px;
+  padding: 0 12px;
+  border-left: #855e42 12px solid;
+  border-right: #855e42 12px solid;
+  background: #111;
+}
+
+div.menu-legs {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 18px;
+  padding: 0 12px;
+  border-left: #855e42 12px solid;
+  border-right: #855e42 12px solid;
+  margin-bottom: 24px;
+}
+
+div.tables {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.tables div.patron {
+  display: -ms-grid;
+  display: grid;
+}
+
+div.tables div.patron.left {
+  -ms-grid-columns: 2fr 1fr;
+      grid-template-columns: 2fr 1fr;
+}
+
+div.tables div.patron.right {
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+}
+
+div.tables div.drink {
+  background-color: white;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, rgba(220, 204, 156, 0.3)), color-stop(50%, transparent)), -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(220, 204, 156, 0.3)), color-stop(50%, transparent));
+  background-image: linear-gradient(90deg, rgba(220, 204, 156, 0.3) 50%, transparent 50%), linear-gradient(rgba(220, 204, 156, 0.3) 50%, transparent 50%);
+  background-size: 10px 10px;
+}
+
+div.tables div.drink img {
+  width: 50px;
+  margin-top: 28px;
+  padding: 0 10px;
+  -webkit-filter: drop-shadow(2px 2px 2px gray);
+          filter: drop-shadow(2px 2px 2px gray);
+}
+
+div.tables div.chair {
+  position: relative;
+}
+
+div.tables div.chair img.avatar {
+  margin: 14px 0;
+  width: 75px;
+  height: 75px;
+  border: solid 1px #567D46;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+}
+
+div.tables div.chair img.polite {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 15px;
+  right: 0px;
+}
+
+div.tables div.patron.left div.chair {
+  text-align: right;
+}
+
+div.tables div.patron.right div.drink {
+  text-align: right;
+}
+
+div.tables div.patron.left div.chair img {
+  margin-right: 10px;
+}
+
+div.tables div.patron.right div.chair img {
+  margin-left: 10px;
+}
+
+div.tables div.patron.right div.chair img.polite {
+  left: 0px;
+}
+
+div.footer {
+  margin-top: 75px;
+  padding-bottom: 25px;
+  font-size: 0.9em;
+  color: #293c21;
+  text-align: center;
+}
+
+div.footer a {
+  color: #293c21;
+}
+
+div.footer a:hover {
+  text-decoration: none;
+}
+
+div.sun {
+  z-index: 0;
+  top: -140px;
+  left: -140px;
+  width: 18rem;
+  height: 18rem;
+  margin: 0rem;
+  position: absolute;
+  background: radial-gradient(transparent 50%, white), radial-gradient(yellow, transparent 70%);
+  -webkit-mask-image: radial-gradient(black 40%, transparent 65%);
+  mask-image: radial-gradient(black 40%, transparent 65%);
+  border-radius: 50%;
+}
+
+div.sun::after, div.sun::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  border-radius: 50%;
+  -webkit-mask-image: radial-gradient(black 40%, transparent 65%);
+  mask-image: radial-gradient(black 40%, transparent 65%);
+}
+
+div.sun::before {
+  background: repeating-conic-gradient(from 0deg, yellow 0deg 20deg, transparent 20deg 40deg);
+  -webkit-animation: rotate 720s linear, scale 3s linear infinite;
+          animation: rotate 720s linear, scale 3s linear infinite;
+}
+
+div.sun::after {
+  background: radial-gradient(yellow, orange 27%, transparent calc(27% + 3px) 100%), radial-gradient(gold, transparent 70%), repeating-conic-gradient(from 0deg, gold 0deg 5deg, transparent 5deg 10deg);
+  -webkit-transform: rotate(15deg);
+          transform: rotate(15deg);
+}
+
+@-webkit-keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes scale {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  20% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  40% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  60% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  70% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes scale {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  20% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  40% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  60% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  70% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+[v-cloak] {
+  display: none;
 }
 /*# sourceMappingURL=site.css.map */

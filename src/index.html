@@ -8,6 +8,134 @@
     <link rel="stylesheet" href="css/site.css" type="text/css">
 </head>
 <body>
-    <h1 class="opening-soon">Opening Soon!</h1>
+
+    <div id="barapp">
+
+        <div class="sky">
+
+            <div class="sun"></div>
+
+            <div class="bar">
+                <div>
+                    <div class="messages speech-bubble custom-message" v-cloak v-if="!showDefaultMessage">
+                        <ul>
+                            <li v-for="(message,index) in displayMessages" :key="index">{{message}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div class="bar-bartender">
+                        <img src="images/robot-shorter.png" title="Hey, I'm Sam, what can I get you?" alt="picture of a robot">
+                    </div>
+                </div>
+                <div>
+                    <div class="messages speech-bubble default-message">
+                        <ul>
+                            <li>
+                                Hey Umbracians, I'm Sam your bar robot!
+                            </li>
+                            <li v-if="barStatus===''">
+                                Give me a moment, am just trying to open up ...
+                            </li>
+                            <li v-if="barStatus==='CLOSED'" v-cloak>
+                                Sorry, the bar is shut right now. Come back another time?
+                            </li>
+                            <li v-if="barStatus==='OPEN'" v-cloak>
+                                Tweet <a href="https://twitter.com/umbracobar" target="_blank">@umbracobar</a>
+                                to place your order and sit yourself down!
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="menu">
+                <table>
+                    <tr>
+                        <td>
+                            <ul v-if="barStatus==='OPEN'" v-cloak>
+                                <li>beer<span>~</span>ipa</li>
+                                <li>aperol<span>~</span>wine</li>
+                                <li>gin<span>~</span>negroni</li>
+                                <li>champagne</li>
+                            </ul>
+                        </td>
+                        <td class="gutter">
+                            <ul v-if="barStatus==='OPEN'" v-cloak>
+                                <li>coffee<span>~</span>tea</li>
+                                <li>coke<span>~</span>water</li>
+                                <li>orange<span>~</span>smoothie</li>
+                                <li>hotchocolate</li>
+                            </ul>
+                        </td>
+                        <td class="logo gutter">
+                            <img src="/images/bbq-logo.svg">
+                        </td>
+                        <td class="gutter">
+                            <ul v-if="barStatus==='OPEN'" v-cloak>
+                                <li>burger<span>~</span>kebab</li>
+                                <li>ribs<span>~</span>hotdog</li>
+                                <li>mushrooms</li>
+                                <li>sweetcorn</li>
+                            </ul>
+                        </td>
+                        <td class="gutter">
+                            <ul v-if="barStatus==='OPEN'" v-cloak>
+                                <li>donut<span>~</span>cake</li>
+                                <li>apple<span>~</span>grapes</li>
+                                <li>chocolate</li>
+                                <li>tshirt<span>~</span>socks</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>            
+            </div>
+        </div>
+
+        <div class="menu-bottom">&nbsp;</div> 
+        <div class="menu-legs">&nbsp;</div> 
+
+        <div class="tables" v-if="barStatus==='OPEN'" v-cloak>
+            <div v-for="(patron,i) in barPatrons" :key="patron.twitterhandle">
+                <div class="patron left" v-if="i%2==0">
+                    <div class="chair">
+                        <img class="avatar" :src="patron.profileImage" :title="patron.name" :alt="patron.screenName" />
+                        <img class="polite" v-if="patron.isPolite" src="images/star.png" alt="gold star" >
+                    </div>
+                    <div class="drink">
+                        <img v-if="patron.drink" :src="'images/drinks/' + patron.drink + '.png'" :alt="patron.drink" :title="patron.drink" />
+                        <img v-if="!patron.drink" src="https://img.spacergif.org/v1/spacer.gif" />
+                    </div>   
+                </div>
+                <div class="patron right" v-if="i%2==1">
+                    <div class="drink">
+                        <img v-if="patron.drink" :src="'images/drinks/' + patron.drink + '.png'" :alt="patron.drink" :title="patron.drink" />
+                        <img v-if="!patron.drink" src="https://img.spacergif.org/v1/spacer.gif" />
+                    </div>   
+                    <div class="chair">
+                        <img class="avatar" :src="patron.profileImage" :title="patron.name" :alt="patron.screenName" />
+                        <img class="polite" v-if="patron.isPolite" src="images/star.png" alt="gold star" >
+                    </div>
+                </div>
+            </div>
+            <div class="patron right" v-if="barPatrons.length % 2==1">
+                <div class="drink"><img src="https://img.spacergif.org/v1/spacer.gif"></div>   
+                <div class="chair"><img src="https://img.spacergif.org/v1/spacer.gif"></div>
+            </div>
+        </div>
+
+        <div class="footer">
+            Source code on 
+            <a href="https://github.com/LottePitcher/UmbracoBBQBar" target="_blank">GitHub</a>
+            |
+            Food &amp; drink icons from <a href="www.flaticon.com" target="_blank">www.flaticon.com</a></div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aspnet-signalr/1.0.27/signalr.min.js" integrity="sha512-a+73ErrZPjhqOu0qbW1QLsenEF4pvDjmnd+Ws6hkDyJlrwAigOQAxQhIT+fPNFWScUvtJQvn+G535TT2C6/G4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="js/bar.js"></script>
 </body>
 </html>
