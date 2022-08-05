@@ -1,6 +1,6 @@
 # Umbraco BBQ Bar
 
-The first online Umbraco bar was built for the virtual Codegarden in 2021, with the hope it would make us all feel like we were together, despite being apart. The project is a collaboration between [Sven Geusens](https://twitter.com/migaroez) and [Lotte Pitcher](https://twitter.com/lottepitcher).
+The first online Umbraco bar was built for the virtual Codegarden in 2021, with the hope it would make us all feel like we were together, despite being apart. The project is a collaboration between [Sven Geussens](https://twitter.com/migaroez) and [Lotte Pitcher](https://twitter.com/lottepitcher).
 
 It reopened for Umbraco's hackathon in October 2021.
 
