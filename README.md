@@ -8,7 +8,7 @@ And now the pop-up bar has moved outside to a sunny park for the virtual Umbraco
 
 ## How It Works
 
-The bar app is a .net core app hosted on Linux. A Twitter webhook has been registered on the [@umbracobar](https://twitter.com/umbracobar) twitter account so notifications of all Twitter events are sent to the bar app.
+The bar app is a .net core app hosted on Linux. A Twitter webhook has been registered on the [@umbracobar](https://twitter.com/umbracobar) Twitter account so notifications of all Twitter events are sent to the bar app.
 
 Each time the bar opens it has had a different front-end. Each front-end is an Azure Static Web App, deployed from here using the GitHub action provided by Azure. 
 
@@ -26,4 +26,4 @@ Using VS Code:
 - Click 'Watch Sass' from the status bar at the bottom
 - Commit the .sass and the generated .css files 
 
-Yes I know that the .css files shouldn't be committed but didn't have time to do it the 'right' way. Pull requests are welcome...
+Yes I know that the .css files shouldn't be committed but didn't have time to do it the 'right' way. Pull requests are welcome... please
