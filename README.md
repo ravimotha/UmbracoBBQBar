@@ -1,6 +1,6 @@
 # Umbraco BBQ Bar
 
-The first online Umbraco bar was built for the virtual Codegarden in 2021, with the hope it would make us all feel we were together despite being apart. The project is a collaboration between [Sven Geusens](https://twitter.com/migaroez) and [Lotte Pitcher](https://twitter.com/lottepitcher).
+The first online Umbraco bar was built for the virtual Codegarden in 2021, with the hope it would make us all feel like we were together, despite being apart. The project is a collaboration between [Sven Geusens](https://twitter.com/migaroez) and [Lotte Pitcher](https://twitter.com/lottepitcher).
 
 It reopened for Umbraco's hackathon in October 2021.
 
@@ -12,7 +12,7 @@ The bar app is a .net core app hosted on Linux. A Twitter webhook has been regis
 
 Each time the bar opens it has had a different front-end. Each front-end is an Azure Static Web App, deployed from here using the GitHub action provided by Azure. 
 
-Both this front-end and [the bar app](https://github.com/LottePitcher/CodegardenBar) are open source, so you can work out the rest from delving poking around the code. 
+Both this front-end and [the bar app](https://github.com/LottePitcher/CodegardenBar) are open source, so you can work out the rest from delving around in the code! 
 
 Remember when viewing a repo in GitHub you can change 'github.com' to 'github.dev' to run VS Code in the browser. I keep forgetting that, so this reminder is really for myself ;-)
 
